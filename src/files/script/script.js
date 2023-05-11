@@ -6,7 +6,7 @@ const input = document.querySelector(".search__input");
 // auth: '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'
 
 const octokit = new Octokit({
-  auth: "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",
+  auth: "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",
 });
 
 input.addEventListener("keydown", (e) => {
