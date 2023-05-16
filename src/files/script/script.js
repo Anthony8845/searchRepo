@@ -1,4 +1,5 @@
 import { Octokit } from "https://cdn.skypack.dev/octokit";
+import { process } from "process"
 
 const repositories = document.querySelector(".repositories");
 const input = document.querySelector(".search__input");
@@ -6,7 +7,7 @@ const input = document.querySelector(".search__input");
 // auth: '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'
 
 const octokit = new Octokit({
-  auth: "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",
+  auth: process.env.GITHUB_TOKEN,
 });
 
 input.addEventListener("keydown", (e) => {
