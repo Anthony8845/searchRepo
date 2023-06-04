@@ -1,6 +1,7 @@
-import { Octokit } from "https://cdn.skypack.dev/octokit";
-import { process } from "process"
+import { Octokit } from "https://esm.sh/octokit";
 
+
+console.log(window.process = process.env);
 const repositories = document.querySelector(".repositories");
 const input = document.querySelector(".search__input");
 
@@ -23,10 +24,11 @@ async function getRepoFunc(inputValue) {
   let getRepo = await octokit.request(
     `GET /search/repositories?q=${inputValue}in:name`,
     {
-      accept: 'application/vnd.github.v3+json',
+      accept: "application/vnd.github.v3+json",
       per_page: 10,
     }
   );
+  console.log(getRepo);
   let arrRepo = getRepo.data.items;
   createListRepo(arrRepo);
 }
@@ -34,7 +36,7 @@ async function getRepoFunc(inputValue) {
 function createListRepo(arr = undefined) {
   repositories.innerHTML = "";
 
-  !arr || arr.length==0
+  !arr || arr.length == 0
     ? (repositories.innerHTML = `
     <div class="notFound">
       Ничего не найдено
