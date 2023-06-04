@@ -1,7 +1,5 @@
 import { Octokit } from "https://esm.sh/octokit";
 
-
-console.log(window.process = process.env);
 const repositories = document.querySelector(".repositories");
 const input = document.querySelector(".search__input");
 
