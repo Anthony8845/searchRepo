@@ -8,7 +8,7 @@ const input = document.querySelector(".search__input");
 // auth: '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'
 
 const octokit = new Octokit({
-  auth: GITHUB_TOKEN,
+  auth: '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',
 });
 
 input.addEventListener("keydown", (e) => {
